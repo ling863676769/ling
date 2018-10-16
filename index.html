@@ -1,27 +1,52 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<title>sky</title>
-<link rel="stylesheet" type="text/css" href="style04.css">
+	<meta charset="UTF-8">
+	<title>翻转的文字</title>
+	<style>
+	body{
+		padding:200px;
+		color:#369;
+	}
+	span{
+		font-size: 100px;
+		font-family: "微软雅黑";
+		position: relative;
+	}
+	span:before,span:after{
+		content:attr(data-q);
+		position: absolute;
+		left: 0;
+		top: 0;
+		transform-origin: left center;
+		transition:all 0.5s linear 0s;
+	}
+	span:before{
+		color:#00FF00;
+		z-index: 3;
+		transform:rotateY(15deg);
+	}
+	span:after{
+		color:rgba(0,0,0,0.5);
+		z-index:2;
+		transform: rotateY(0deg) scale(1.1, 1);
+	}
+	span:hover:before{
+		transform:rotateY(40deg) skew(0deg, 3deg);
+	}
+	span:hover:after{
+		transform:rotateY(40deg) skew(0deg,20deg);
+	}
+	</style>
 </head>
 <body>
-<h2>点击查看</h2>
-<hr size="3" color="#5E2D00"  width="750px">
-<nav>
-    <a href="#news1" class="one">12211</a>
-    <a href="#news2" class="two">2122</a>
-   
-</nav>
-<hr size="3" color="#5E2D00"  width="750px">
-<dl id="news1">
-	<dt><img src="images/1.jpg"></dt>
-</dl>
-<dl id="news2">
-	<dt><img src="images/2.jpg"></dt>
-  
-</dl>
-    
-</dl>
+	<span data-q="柳">一</span>
+	<span data-q="州">行</span>
+	<span data-q="职">白</span>
+	<span data-q="业">露</span>
+	<span data-q="技">数</span>
+	<span data-q="术">白</span>
+	<span data-q="学">桦</span>
+	<span data-q="院">树</span>
 </body>
 </html>
